@@ -7,13 +7,10 @@ metadata:
     build.appstudio.redhat.com/pull_request_number: '{{pull_request_number}}'
     build.appstudio.redhat.com/target_branch: '{{target_branch}}'
     pipelinesascode.tekton.dev/max-keep-runs: "3"
-    pipelinesascode.tekton.dev/on-cel-expression: event == "push" && target_branch == "main" &&
-      (".tekton/single-arch-build-pipeline.yaml".pathChanged() ||
-      ".tekton/marin3r-operator-bundle-pull-request.yaml".pathChanged() ||
-      ".tekton/marin3r-operator-bundle-push.yaml".pathChanged() ||
-      "bundle.Dockerfile".pathChanged() ||
-      "bundle".pathChanged() ||
-      "hack/***".pathChanged())
+    pipelinesascode.tekton.dev/on-cel-expression: event == "push" && target_branch
+      == "main" && (".tekton/single-arch-build-pipeline.yaml".pathChanged() || ".tekton/marin3r-operator-bundle-pull-request.yaml".pathChanged()
+      || ".tekton/marin3r-operator-bundle-push.yaml".pathChanged() || "bundle.Dockerfile".pathChanged()
+      || "bundle".pathChanged() || "hack/***".pathChanged())
   creationTimestamp: null
   labels:
     appstudio.openshift.io/application: marin3r
@@ -23,21 +20,24 @@ metadata:
   namespace: rh-ee-gsaslisl-tenant
 spec:
   params:
-    - name: git-url
-      value: '{{source_url}}'
-    - name: revision
-      value: '{{revision}}'
-    - name: output-image
-      value: quay.io/redhat-user-workloads/rh-ee-gsaslisl-tenant/marin3r/marin3r-operator-bundle:on-pr-{{revision}}
-    - name: image-expires-after
-      value: 5d
-    - name: dockerfile
-      value: bundle.Dockerfile
-    - name: hermetic
-      value: "false"
+  - name: git-url
+    value: '{{source_url}}'
+  - name: revision
+    value: '{{revision}}'
+  - name: output-image
+    value: quay.io/redhat-user-workloads/rh-ee-gsaslisl-tenant/marin3r/marin3r-operator-bundle:on-pr-{{revision}}
+  - name: image-expires-after
+    value: 5d
+  - name: dockerfile
+    value: bundle.Dockerfile
+  - name: hermetic
+    value: "false"
   pipelineRef:
     name: single-arch-build-pipeline
+  taskRunTemplate:
+    serviceAccountName: build-pipeline-marin3r-operator-bundle
   workspaces:
-    - name: git-auth
-      secret:
-        secretName: '{{ git_auth_secret }}'
+  - name: git-auth
+    secret:
+      secretName: '{{ git_auth_secret }}'
+status: {}
