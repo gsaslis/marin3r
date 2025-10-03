@@ -3,7 +3,7 @@ module github.com/3scale-ops/marin3r
 go 1.21
 
 require (
-	github.com/3scale-ops/basereconciler v0.5.1
+	github.com/3scale-ops/basereconciler v0.7.0
 	github.com/MakeNowJust/heredoc v1.0.0
 	github.com/davecgh/go-spew v1.1.1
 	github.com/envoyproxy/go-control-plane v0.12.1-0.20240509201933-132c0a31ab09
