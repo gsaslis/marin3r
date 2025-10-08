@@ -1,6 +1,8 @@
 module github.com/3scale-ops/marin3r
 
-go 1.21
+go 1.24.0
+
+toolchain go1.24.6
 
 require (
 	github.com/3scale-ops/basereconciler v0.5.1
@@ -79,7 +81,7 @@ require (
 	golang.org/x/exp v0.0.0-20220722155223-a9213eeb770e // indirect
 	golang.org/x/net v0.23.0 // indirect
 	golang.org/x/oauth2 v0.16.0 // indirect
-	golang.org/x/sys v0.18.0 // indirect
+	golang.org/x/sys v0.37.0 // indirect
 	golang.org/x/term v0.18.0 // indirect
 	golang.org/x/text v0.14.0 // indirect
 	golang.org/x/time v0.3.0 // indirect
