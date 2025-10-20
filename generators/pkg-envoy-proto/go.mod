@@ -1,6 +1,8 @@
 module github.com/3scale-ops/marin3r/generators/pkg-envoy-proto
 
-go 1.20
+go 1.21
+
+toolchain go1.24.6
 
 require (
 	github.com/dave/jennifer v1.7.0
