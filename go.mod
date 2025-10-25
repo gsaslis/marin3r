@@ -1,6 +1,8 @@
 module github.com/3scale-ops/marin3r
 
-go 1.21
+go 1.22.0
+
+toolchain go1.24.6
 
 require (
 	github.com/3scale-ops/basereconciler v0.5.1
@@ -19,9 +21,9 @@ require (
 	github.com/prometheus/client_golang v1.18.0
 	github.com/prometheus/common v0.45.0
 	github.com/spf13/cobra v1.8.0
-	google.golang.org/genproto/googleapis/rpc v0.0.0-20240318140521-94a12d6c2237
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20240826202546-f6391c0de4c7
 	google.golang.org/grpc v1.62.1
-	google.golang.org/protobuf v1.33.0
+	google.golang.org/protobuf v1.34.2
 	k8s.io/api v0.29.2
 	k8s.io/apimachinery v0.29.2
 	k8s.io/client-go v0.29.2
@@ -33,7 +35,7 @@ require (
 // replace github.com/3scale-ops/basereconciler => /home/roi/github.com/3scale/basereconciler
 
 require (
-	cel.dev/expr v0.15.0 // indirect
+	cel.dev/expr v0.24.0 // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/census-instrumentation/opencensus-proto v0.4.1 // indirect
 	github.com/cespare/xxhash/v2 v2.2.0 // indirect
