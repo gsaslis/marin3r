@@ -1,6 +1,8 @@
 module github.com/3scale-ops/marin3r
 
-go 1.21
+go 1.24.0
+
+toolchain go1.24.6
 
 require (
 	github.com/3scale-ops/basereconciler v0.5.1
@@ -10,7 +12,7 @@ require (
 	github.com/ghodss/yaml v1.0.0
 	github.com/go-logr/logr v1.4.1
 	github.com/go-test/deep v1.1.0
-	github.com/google/go-cmp v0.6.0
+	github.com/google/go-cmp v0.7.0
 	github.com/goombaio/namegenerator v0.0.0-20181006234301-989e774b106e
 	github.com/onsi/ginkgo/v2 v2.14.0
 	github.com/onsi/gomega v1.30.0
@@ -19,9 +21,9 @@ require (
 	github.com/prometheus/client_golang v1.18.0
 	github.com/prometheus/common v0.45.0
 	github.com/spf13/cobra v1.8.0
-	google.golang.org/genproto/googleapis/rpc v0.0.0-20240318140521-94a12d6c2237
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20251029180050-ab9386a59fda
 	google.golang.org/grpc v1.62.1
-	google.golang.org/protobuf v1.33.0
+	google.golang.org/protobuf v1.36.10
 	k8s.io/api v0.29.2
 	k8s.io/apimachinery v0.29.2
 	k8s.io/client-go v0.29.2
